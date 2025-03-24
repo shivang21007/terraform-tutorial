@@ -50,11 +50,11 @@ resource "aws_security_group" "my_security_group" {
 resource "aws_instance" "my-server-01" {
   key_name = aws_key_pair.my_ssh_key.key_name
   security_groups = [ aws_security_group.my_security_group.name]
-  instance_type = "t2.micro"
-  ami = "ami-0e35ddab05955cf57"
+  instance_type = var.ec2_instance_type
+  ami = var.ec2_instance_ami_id
 
   root_block_device {
-    volume_size = 15
+    volume_size = var.ec2_root_storage_size
     volume_type = "gp3"
   }
   tags = {
