@@ -53,6 +53,8 @@ resource "aws_instance" "my-server-01" {
   instance_type = var.ec2_instance_type
   ami = var.ec2_instance_ami_id
 
+    user_data = file("./installation_script.sh")
+
   root_block_device {
     volume_size = var.ec2_root_storage_size
     volume_type = "gp3"
