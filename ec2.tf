@@ -44,7 +44,7 @@ resource "aws_security_group" "my_security_group" {
 }
 
 
-#ec2 instance 
+#ec2 instance by terraform
 resource "aws_instance" "my_instance" {
   # count = 2    #this is for multiple instances
 

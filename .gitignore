@@ -1,2 +1,5 @@
 tf_rsa*
 .terraform*
+commands.txt
+terraform.tfstate
+terraform.tfstate.backup
