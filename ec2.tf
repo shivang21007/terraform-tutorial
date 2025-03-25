@@ -49,10 +49,13 @@ resource "aws_instance" "my_instance" {
   # count = 2    #this is for multiple instances
 
   # this is for multiple instances but with different instance configuration
+  # these are meta-arguments
   for_each = tomap({
     my-server-01 = "t2.micro"
     my-server-02 = "t2.micro"
   })
+  # this make sure that the instance is created after the security group is created
+  depends_on = [aws_security_group.my_security_group]
 
   key_name        = aws_key_pair.my_ssh_key.key_name
   security_groups = [aws_security_group.my_security_group.name]
@@ -63,7 +66,8 @@ resource "aws_instance" "my_instance" {
   user_data = file("./installation_script.sh")
 
   root_block_device {
-    volume_size = var.ec2_root_storage_size
+    # condition expression
+    volume_size = var.env == "dev" ? 10 : var.ec2_root_storage_size
     volume_type = "gp3"
   }
   tags = {
