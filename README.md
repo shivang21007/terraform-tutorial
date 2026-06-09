@@ -12,8 +12,8 @@ Welcome to my Terraform learning repository! This project serves as a practical 
 
 *Note: As I progress in my learning, I will be creating new folders to isolate different projects and concepts.*
 
-### Current Sandbox (Root Directory)
-Right now, the root files (`ec2.tf`, `variables.tf`, `outputs.tf`) house my initial practice project. It demonstrates:
+### 00-initial-sandbox/
+This directory houses my very first Terraform practice project. It demonstrates:
 - Provisioning multiple **AWS EC2 Spot Instances** using `for_each` and map variables.
 - Dynamic **Security Group** rules (ingress/egress) built from list variables.
 - Automated server bootstrapping via a `user_data` bash script (`installation_script.sh`) that installs and configures Nginx.
