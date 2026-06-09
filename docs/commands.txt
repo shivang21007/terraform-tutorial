@@ -8,3 +8,9 @@ terraform init
  terraform state list
  terraform destroy --target <resoruce>
  terraform import <resoure-name>
+
+ aws ssm get-parameter \
+  --name /aws/service/canonical/ubuntu/server/24.04/stable/current/amd64/hvm/ebs-gp3/ami-id \
+  --region ap-southeast-1 \
+  --query "Parameter.Value" \
+  --output text

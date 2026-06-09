@@ -64,14 +64,14 @@ variable "instances" {
     # }
 
     "worker-node-1" = {
-      ami           = "ami-05cf1e9f73fbad2e2"
+      ami           = "ami-0ba6f2c4de657798c"
       os_family     = "ubuntu"
       instance_type = "t3.micro"
       volume_size   = 10
     }
 
     "worker-node-2" = {
-      ami           = "ami-05cf1e9f73fbad2e2"
+      ami           = "ami-0ba6f2c4de657798c"
       os_family     = "ubuntu"
       instance_type = "t3.micro"
       volume_size   = 10
